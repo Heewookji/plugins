@@ -21,15 +21,18 @@ dependencies:
     sdk: flutter
   webview_flutter_android:
     git:
-      url: https://github.com/Heewookji/plugins/tree/main/packages/webview_flutter/webview_flutter_android
+      url: git@github.com:Heewookji/plugins.git
+      path: packages/webview_flutter/webview_flutter_android
       ref: main
   webview_flutter_platform_interface:
     git:
-      url: https://github.com/Heewookji/plugins/tree/main/packages/webview_flutter/webview_flutter_platform_interface
+      url: git@github.com:Heewookji/plugins.git
+      path: packages/webview_flutter/webview_flutter_platform_interface
       ref: main
   webview_flutter_wkwebview:
     git:
-      url: https://github.com/Heewookji/plugins/tree/main/packages/webview_flutter/webview_flutter_wkwebview
+      url: git@github.com:Heewookji/plugins.git
+      path: packages/webview_flutter/webview_flutter_wkwebview
       ref: main
 
 dev_dependencies:
