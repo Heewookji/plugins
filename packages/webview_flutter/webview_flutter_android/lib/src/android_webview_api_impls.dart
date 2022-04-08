@@ -294,6 +294,12 @@ class WebViewHostApiImpl extends WebViewHostApi {
   Future<void> setBackgroundColorFromInstance(WebView instance, int color) {
     return setBackgroundColor(instanceManager.getInstanceId(instance)!, color);
   }
+
+  /// Helper method to convert instances ids to objects.
+  Future<void> setScrollbarEnabledFromInstance(WebView instance, bool enabled) {
+    return setScrollbarEnabled(
+        instanceManager.getInstanceId(instance)!, enabled);
+  }
 }
 
 /// Host api implementation for [WebSettings].

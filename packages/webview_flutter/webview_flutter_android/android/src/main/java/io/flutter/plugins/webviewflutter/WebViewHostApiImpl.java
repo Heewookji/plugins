@@ -514,6 +514,12 @@ public class WebViewHostApiImpl implements WebViewHostApi {
     webView.setBackgroundColor(color.intValue());
   }
 
+  @Override
+  public void setScrollbarEnabled(Long instanceId, Boolean enabled) {
+    final WebView webView = (WebView) instanceManager.getInstance(instanceId);
+    webView.setVerticalScrollBarEnabled(enabled);
+  }
+
   @Nullable
   private static String parseNullStringIdentifier(String value) {
     if (value.equals(nullStringIdentifier)) {

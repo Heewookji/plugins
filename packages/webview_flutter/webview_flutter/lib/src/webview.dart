@@ -99,6 +99,7 @@ class WebView extends StatefulWidget {
         AutoMediaPlaybackPolicy.require_user_action_for_all_media_types,
     this.allowsInlineMediaPlayback = false,
     this.backgroundColor,
+    this.scrollbarEnabled,
   })  : assert(javascriptMode != null),
         assert(initialMediaPlaybackPolicy != null),
         assert(allowsInlineMediaPlayback != null),
@@ -300,6 +301,9 @@ class WebView extends StatefulWidget {
   /// default [backgroundColor] is `null`.
   final Color? backgroundColor;
 
+  /// By default 'scrollbar' is true
+  final bool? scrollbarEnabled;
+
   @override
   State<StatefulWidget> createState() => _WebViewState();
 }
@@ -372,6 +376,7 @@ CreationParams _creationParamsfromWidget(WebView widget) {
     userAgent: widget.userAgent,
     autoMediaPlaybackPolicy: widget.initialMediaPlaybackPolicy,
     backgroundColor: widget.backgroundColor,
+    scrollbarEnabled: widget.scrollbarEnabled,
     cookies: widget.initialCookies,
   );
 }

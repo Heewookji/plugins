@@ -376,6 +376,10 @@ class WebViewAndroidPlatformController extends WebViewPlatformController {
     if (backgroundColor != null) {
       webView.setBackgroundColor(backgroundColor);
     }
+    final bool? scrollbarEnabled = creationParams.scrollbarEnabled;
+    if (scrollbarEnabled != null) {
+      webView.setScrollbarEnabled(scrollbarEnabled);
+    }
 
     addJavascriptChannels(creationParams.javascriptChannelNames);
 
