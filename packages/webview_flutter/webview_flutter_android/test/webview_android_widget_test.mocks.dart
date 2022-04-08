@@ -95,6 +95,11 @@ class MockWebSettings extends _i1.Mock implements _i2.WebSettings {
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
   @override
+  _i4.Future<void> setScrollbar(bool? scrollbar) =>
+      (super.noSuchMethod(Invocation.method(#setScrollbar, [scrollbar]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i4.Future<void>);
+  @override
   _i4.Future<void> setLoadWithOverviewMode(bool? overview) => (super
       .noSuchMethod(Invocation.method(#setLoadWithOverviewMode, [overview]),
           returnValue: Future<void>.value(),

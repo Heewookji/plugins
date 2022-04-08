@@ -365,6 +365,11 @@ class WebView {
     return api.setBackgroundColorFromInstance(this, color.value);
   }
 
+  /// Enables scrollbar
+  Future<void> setScrollbarEnabled(bool enabled) {
+    return api.setScrollbarEnabledFromInstance(this, enabled);
+  }
+
   /// Releases all resources used by the [WebView].
   ///
   /// Any methods called after [release] will throw an exception.
