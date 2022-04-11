@@ -105,6 +105,8 @@ abstract class WebViewHostApi {
   void setBackgroundColor(int instanceId, int color);
 
   void setScrollbarEnabled(int instanceId, bool enabled);
+
+  void setTextScale(int instanceId, int textScale);
 }
 
 @HostApi(dartHostTestHandler: 'TestWebSettingsHostApi')

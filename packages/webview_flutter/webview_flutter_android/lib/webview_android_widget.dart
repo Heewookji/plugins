@@ -380,6 +380,10 @@ class WebViewAndroidPlatformController extends WebViewPlatformController {
     if (scrollbarEnabled != null) {
       webView.setScrollbarEnabled(scrollbarEnabled);
     }
+    final int? textScale = creationParams.textScale;
+    if (textScale != null) {
+      webView.setTextScale(textScale);
+    }
 
     addJavascriptChannels(creationParams.javascriptChannelNames);
 

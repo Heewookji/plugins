@@ -370,6 +370,11 @@ class WebView {
     return api.setScrollbarEnabledFromInstance(this, enabled);
   }
 
+  /// set textScale
+  Future<void> setTextScale(int textScale) {
+    return api.setTextScaleFromInstance(this, textScale);
+  }
+
   /// Releases all resources used by the [WebView].
   ///
   /// Any methods called after [release] will throw an exception.

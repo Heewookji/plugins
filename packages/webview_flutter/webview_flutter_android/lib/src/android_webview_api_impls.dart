@@ -300,6 +300,11 @@ class WebViewHostApiImpl extends WebViewHostApi {
     return setScrollbarEnabled(
         instanceManager.getInstanceId(instance)!, enabled);
   }
+
+  /// Helper method to convert instances ids to objects.
+  Future<void> setTextScaleFromInstance(WebView instance, int textScale) {
+    return setTextScale(instanceManager.getInstanceId(instance)!, textScale);
+  }
 }
 
 /// Host api implementation for [WebSettings].
