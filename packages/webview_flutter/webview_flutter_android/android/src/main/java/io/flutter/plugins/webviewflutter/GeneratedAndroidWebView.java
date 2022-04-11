@@ -213,6 +213,7 @@ public class GeneratedAndroidWebView {
     void setWebChromeClient(Long instanceId, Long clientInstanceId);
     void setBackgroundColor(Long instanceId, Long color);
     void setScrollbarEnabled(Long instanceId, Boolean enabled);
+    void setTextScale(Long instanceId, Long textScale);
 
     /** The codec used by WebViewHostApi. */
     static MessageCodec<Object> getCodec() {
@@ -972,6 +973,34 @@ public class GeneratedAndroidWebView {
                 throw new NullPointerException("enabledArg unexpectedly null.");
               }
               api.setScrollbarEnabled(instanceIdArg.longValue(), enabledArg);
+              wrapped.put("result", null);
+            }
+            catch (Error | RuntimeException exception) {
+              wrapped.put("error", wrapError(exception));
+            }
+            reply.reply(wrapped);
+          });
+        } else {
+          channel.setMessageHandler(null);
+        }
+      }
+      {
+        BasicMessageChannel<Object> channel =
+            new BasicMessageChannel<>(binaryMessenger, "dev.flutter.pigeon.WebViewHostApi.setTextScale", getCodec());
+        if (api != null) {
+          channel.setMessageHandler((message, reply) -> {
+            Map<String, Object> wrapped = new HashMap<>();
+            try {
+              ArrayList<Object> args = (ArrayList<Object>)message;
+              Number instanceIdArg = (Number)args.get(0);
+              if (instanceIdArg == null) {
+                throw new NullPointerException("instanceIdArg unexpectedly null.");
+              }
+              Number textScaleArg = (Number)args.get(1);
+              if (textScaleArg == null) {
+                throw new NullPointerException("textScaleArg unexpectedly null.");
+              }
+              api.setTextScale(instanceIdArg.longValue(), textScaleArg.longValue());
               wrapped.put("result", null);
             }
             catch (Error | RuntimeException exception) {

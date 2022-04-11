@@ -25,6 +25,7 @@ class CreationParams {
         AutoMediaPlaybackPolicy.require_user_action_for_all_media_types,
     this.backgroundColor,
     this.scrollbarEnabled,
+    this.textScale,
     this.cookies = const <WebViewCookie>[],
   }) : assert(autoMediaPlaybackPolicy != null);
 
@@ -64,14 +65,17 @@ class CreationParams {
   /// When null the platform's webview default background color is used.
   final Color? backgroundColor;
 
-  /// Sets whether the WebView should print scrollbar
+  /// Sets whether the WebView should print scrollbar.
   final bool? scrollbarEnabled;
+
+  /// Sets the WebView textScale.
+  final int? textScale;
 
   /// The initial set of cookies to set before the webview does its first load.
   final List<WebViewCookie> cookies;
 
   @override
   String toString() {
-    return 'CreationParams(initialUrl: $initialUrl, settings: $webSettings, javascriptChannelNames: $javascriptChannelNames, UserAgent: $userAgent, backgroundColor: $backgroundColor, scrollbarEnabled: $scrollbarEnabled, cookies: $cookies)';
+    return 'CreationParams(initialUrl: $initialUrl, settings: $webSettings, javascriptChannelNames: $javascriptChannelNames, UserAgent: $userAgent, backgroundColor: $backgroundColor, scrollbarEnabled: $scrollbarEnabled, textScale: $textScale, cookies: $cookies)';
   }
 }

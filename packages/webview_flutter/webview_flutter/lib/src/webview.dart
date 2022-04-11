@@ -100,6 +100,7 @@ class WebView extends StatefulWidget {
     this.allowsInlineMediaPlayback = false,
     this.backgroundColor,
     this.scrollbarEnabled = true,
+    this.textScale,
   })  : assert(javascriptMode != null),
         assert(initialMediaPlaybackPolicy != null),
         assert(allowsInlineMediaPlayback != null),
@@ -306,6 +307,9 @@ class WebView extends StatefulWidget {
   /// only work for Android.
   final bool? scrollbarEnabled;
 
+  /// only work for Android.
+  final int? textScale;
+
   @override
   State<StatefulWidget> createState() => _WebViewState();
 }
@@ -379,6 +383,7 @@ CreationParams _creationParamsfromWidget(WebView widget) {
     autoMediaPlaybackPolicy: widget.initialMediaPlaybackPolicy,
     backgroundColor: widget.backgroundColor,
     scrollbarEnabled: widget.scrollbarEnabled,
+    textScale: widget.textScale,
     cookies: widget.initialCookies,
   );
 }

@@ -520,6 +520,12 @@ public class WebViewHostApiImpl implements WebViewHostApi {
     webView.setVerticalScrollBarEnabled(enabled);
   }
 
+  @Override
+  public void setTextScaleFactor(Long instanceId, Long textScale) {
+    final WebView webView = (WebView) instanceManager.getInstance(instanceId);
+    webView.getSettings().setTextZoom(textScale);
+  }
+
   @Nullable
   private static String parseNullStringIdentifier(String value) {
     if (value.equals(nullStringIdentifier)) {
