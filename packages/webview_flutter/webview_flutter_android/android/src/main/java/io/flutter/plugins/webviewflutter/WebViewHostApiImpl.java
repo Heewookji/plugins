@@ -521,7 +521,7 @@ public class WebViewHostApiImpl implements WebViewHostApi {
   }
 
   @Override
-  public void setTextScaleFactor(Long instanceId, Long textScale) {
+  public void setTextScale(Long instanceId, Long textScale) {
     final WebView webView = (WebView) instanceManager.getInstance(instanceId);
     webView.getSettings().setTextZoom(textScale);
   }
