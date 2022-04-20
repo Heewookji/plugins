@@ -10,6 +10,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.graphics.Bitmap;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -105,6 +106,11 @@ public class WebChromeClientHostApiImpl implements WebChromeClientHostApi {
       if (flutterApi != null) {
         flutterApi.onProgressChanged(this, view, (long) progress, reply -> {});
       }
+    }
+
+    @Override
+    public Bitmap getDefaultVideoPoster(){
+      return Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
     }
 
     /**
