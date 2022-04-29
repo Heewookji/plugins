@@ -303,8 +303,6 @@ class WebView extends StatefulWidget {
   final Color? backgroundColor;
 
   /// By default 'scrollbar' is true
-  ///
-  /// only work for Android.
   final bool? scrollbarEnabled;
 
   /// only work for Android.

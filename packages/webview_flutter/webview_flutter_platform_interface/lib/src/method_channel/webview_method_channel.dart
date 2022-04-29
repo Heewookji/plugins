@@ -291,6 +291,7 @@ class MethodChannelWebViewPlatform implements WebViewPlatformController {
       'autoMediaPlaybackPolicy': creationParams.autoMediaPlaybackPolicy.index,
       'usesHybridComposition': usesHybridComposition,
       'backgroundColor': creationParams.backgroundColor?.value,
+      'scrollbarEnabled': creationParams.scrollbarEnabled,
       'cookies': creationParams.cookies
           .map((WebViewCookie cookie) => cookie.toJson())
           .toList()
