@@ -292,6 +292,7 @@ class MethodChannelWebViewPlatform implements WebViewPlatformController {
       'usesHybridComposition': usesHybridComposition,
       'backgroundColor': creationParams.backgroundColor?.value,
       'scrollbarEnabled': creationParams.scrollbarEnabled,
+      'overscrollEnabled': creationParams.overscrollEnabled,
       'cookies': creationParams.cookies
           .map((WebViewCookie cookie) => cookie.toJson())
           .toList()

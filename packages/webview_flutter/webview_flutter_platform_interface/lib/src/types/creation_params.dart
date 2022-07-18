@@ -25,6 +25,7 @@ class CreationParams {
         AutoMediaPlaybackPolicy.require_user_action_for_all_media_types,
     this.backgroundColor,
     this.scrollbarEnabled,
+    this.overscrollEnabled,
     this.textScale,
     this.cookies = const <WebViewCookie>[],
   }) : assert(autoMediaPlaybackPolicy != null);
@@ -67,6 +68,9 @@ class CreationParams {
 
   /// Sets whether the WebView should print scrollbar.
   final bool? scrollbarEnabled;
+
+  /// Sets whether the WebView can scroll over.
+  final bool? overscrollEnabled;
 
   /// Sets the WebView textScale.
   final int? textScale;

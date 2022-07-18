@@ -100,6 +100,7 @@ class WebView extends StatefulWidget {
     this.allowsInlineMediaPlayback = false,
     this.backgroundColor,
     this.scrollbarEnabled = true,
+    this.overscrollEnabled = true,
     this.textScale,
   })  : assert(javascriptMode != null),
         assert(initialMediaPlaybackPolicy != null),
@@ -302,8 +303,11 @@ class WebView extends StatefulWidget {
   /// default [backgroundColor] is `null`.
   final Color? backgroundColor;
 
-  /// By default 'scrollbar' is true
-  final bool? scrollbarEnabled;
+  /// By default 'scrollbar' is true.
+  final bool scrollbarEnabled;
+
+  /// By default 'overscrollEnabled' is true. only work for iOS.
+  final bool overscrollEnabled;
 
   /// only work for Android.
   final int? textScale;
@@ -381,6 +385,7 @@ CreationParams _creationParamsfromWidget(WebView widget) {
     autoMediaPlaybackPolicy: widget.initialMediaPlaybackPolicy,
     backgroundColor: widget.backgroundColor,
     scrollbarEnabled: widget.scrollbarEnabled,
+    overscrollEnabled: widget.overscrollEnabled,
     textScale: widget.textScale,
     cookies: widget.initialCookies,
   );

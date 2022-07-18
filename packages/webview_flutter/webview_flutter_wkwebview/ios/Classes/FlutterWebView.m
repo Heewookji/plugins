@@ -121,6 +121,10 @@
     NSNumber *scrollbarEnabledValue = args[@"scrollbarEnabled"];
     _webView.scrollView.showsVerticalScrollIndicator = _webView.scrollView.showsHorizontalScrollIndicator = [scrollbarEnabledValue boolValue];
 
+    // scrollbar
+    NSNumber *overscrollEnabledValue = args[@"overscrollEnabled"];
+    _webView.scrollView.bounces = [overscrollEnabledValue boolValue];
+
     _navigationDelegate = [[FLTWKNavigationDelegate alloc] initWithChannel:_channel];
     _webView.UIDelegate = self;
     _webView.navigationDelegate = _navigationDelegate;
