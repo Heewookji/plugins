@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:webview_flutter_platform_interface/webview_flutter_platform_interface.dart';
 
+import 'initial_gesture_recognizer.dart';
 import 'src/android_webview.dart';
 import 'src/instance_manager.dart';
 import 'webview_android.dart';
@@ -47,8 +48,14 @@ class SurfaceAndroidWebView extends AndroidWebView {
           ) {
             return AndroidViewSurface(
               controller: controller as AndroidViewController,
-              gestureRecognizers: gestureRecognizers ??
-                  const <Factory<OneSequenceGestureRecognizer>>{},
+              gestureRecognizers: gestureRecognizers == null
+                  ? const <Factory<OneSequenceGestureRecognizer>>{}
+                  : <Factory<OneSequenceGestureRecognizer>>{
+                      Factory<InitialGestureRecognizer>(
+                        () => InitialGestureRecognizer(controller),
+                      ),
+                      ...gestureRecognizers,
+                    },
               hitTestBehavior: PlatformViewHitTestBehavior.opaque,
             );
           },
